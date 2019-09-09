@@ -1,7 +1,8 @@
 from Card import Card
 from Game_messages import show_score, winner
 
-print('Let\'s play 21!\nHere\'s your starting hand:')
+print('Let\'s play 21!\n\nPress enter for your starting hand.')
+input()
 
 play = Card()
 
@@ -10,7 +11,7 @@ play.score()
 show_score(play)
 
 while True:
-    choice = input('Would you like to stay or hit? ')
+    choice = input('\nWould you like to stay or hit? ')
 
     if choice.title() == 'Hit':
         play.draw(1)
@@ -25,13 +26,15 @@ while True:
         show_score(play)
         break
 
-print('It\'s the computer\'s turn now!')
+print('\nIt\'s the computer\'s turn now!')
+input()
 
 ai_play = Card('Computer')
 
 ai_play.draw(2)
 ai_play.score()
 show_score(ai_play)
+input()
 
 while True:
     if ai_play.points <= play.points:
@@ -47,5 +50,6 @@ while True:
     else:
         print(f'The computer stays.')
         break
+    input()
 
 winner(play,ai_play)

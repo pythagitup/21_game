@@ -8,6 +8,6 @@ def show_score(card):
 
 def winner(player,computer):
     if player.points > computer.points:
-        print(f'Congratulations! You beat the computer!')
+        print(f'\nCongratulations! You beat the computer!')
     elif player.points < computer.points:
-        print(f'Sorry, the computer beat you.')
+        print(f'\nSorry, the computer beat you.')
